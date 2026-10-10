@@ -88,92 +88,6 @@ La estructura se ampliará progresivamente conforme se desarrollen las siguiente
 | **Guía 05** | Actividades de la quinta guía | ⏳ Pendiente |
 | **Guía 06** | Actividades de la sexta guía | ⏳ Pendiente |
 
-Las actividades se implementarán respetando las consignas oficiales de la asignatura.
-
-## ✅ Guía 01 — Introducción a OpenGL y GLSL
-
-### 🔺 Parte 1: Primer triángulo con OpenGL
-
-Se desarrolló una aplicación gráfica utilizando el template oficial proporcionado por la cátedra.
-
-**Funcionalidades implementadas:**
-
-- Inicialización de GLFW.
-- Creación de una ventana con contexto OpenGL 4.6 Core Profile.
-- Inicialización del cargador de funciones GLAD.
-- Definición de los vértices de un triángulo.
-- Creación y configuración de VAO y VBO.
-- Implementación de vertex shader y fragment shader mediante GLSL.
-- Compilación, enlazado y utilización de un programa de shaders.
-- Renderizado de un triángulo de color sólido.
-- Detección y visualización de errores de compilación de shaders.
-- Liberación de los recursos gráficos utilizados.
-
-**Resultado:** aplicación OpenGL que representa un triángulo sobre un fondo de color uniforme.
-
-### 📦 Parte 2: ResourceManager
-
-Se implementó un módulo independiente utilizando exclusivamente **C++17 y su biblioteca estándar**, sin dependencias de OpenGL.
-
-**Funcionalidades implementadas:**
-
-- Lectura del código fuente de shaders desde archivos.
-- Almacenamiento de los recursos en memoria mediante una caché.
-- Identificación de los recursos a través de claves lógicas.
-- Reutilización de recursos previamente cargados.
-- Prevención de lecturas repetidas del mismo recurso.
-- Detección de conflictos entre claves y archivos.
-- Manejo de errores mediante excepciones.
-- Recuperación de recursos mediante referencias constantes.
-- Limpieza de la caché mediante `clear()`.
-
-La implementación utiliza `std::unordered_map`, `std::ifstream`, `std::filesystem` y otras herramientas de la biblioteca estándar.
-
-**Resultado:** módulo compilado y probado mediante un programa de consola independiente.
-
-## 🚀 Compilación y ejecución
-
-### Requisitos
-
-Para Ubuntu 20.04 o superior, las dependencias indicadas por la cátedra pueden instalarse mediante:
-
-```bash
-sudo apt update
-
-sudo apt install -y \
-  build-essential \
-  mesa-common-dev \
-  libgl-dev \
-  libglu1-mesa-dev \
-  libglm-dev \
-  libglfw3-dev \
-  mesa-utils
-```
-
-Se requiere un controlador gráfico compatible con OpenGL 4.5 o superior.
-
-### 🔺 Ejecutar la Parte 1
-
-Desde la raíz del repositorio:
-
-```bash
-cd Practico/Guia-1/Parte-1-Triangulo
-
-make build
-
-./bin/ogl-app
-```
-
-### 📦 Ejecutar la Parte 2
-
-```bash
-cd Practico/Guia-1/Parte-2-ResourceManager
-
-g++ -std=c++17 -Wall -Wextra \
-  ResourceManager.cpp main.cpp -o test
-
-./test
-```
 
 ## ✈️ Trabajo práctico integrador
 
@@ -198,18 +112,6 @@ El desarrollo de cada trabajo práctico sigue una secuencia de aprendizaje:
 
 El objetivo no es solamente obtener un programa funcional, sino también **entender cómo funciona y poder justificar técnicamente su implementación**.
 
-## 📌 Estado del proyecto
-
-🚧 **En desarrollo — Ciclo académico 2026**
-
-- ✅ Preparación del entorno de desarrollo.
-- ✅ Configuración de OpenGL, GLFW, GLAD y GLM.
-- ✅ Compilación y ejecución del template oficial.
-- ✅ Resolución de la Guía Práctica 01.
-- ⏳ Desarrollo de las guías prácticas restantes.
-- ⏳ Trabajo práctico integrador.
-
----
 
 ## 🎓 Información académica
 
