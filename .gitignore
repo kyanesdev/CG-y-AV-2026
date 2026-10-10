@@ -1,0 +1,50 @@
+
+# ==========================================
+# CGyAV 2026 - Git Ignore
+# ==========================================
+
+# Archivos de compilacion C/C++
+*.o
+*.obj
+*.a
+*.so
+*.dll
+*.exe
+*.out
+
+# Directorios de compilacion
+build/
+bin/
+Debug/
+Release/
+
+# Ejecutables locales de pruebas
+test
+test.exe
+
+# Configuracion local de editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Archivos temporales
+*.log
+*.tmp
+*.bak
+*.original
+
+# Archivos comprimidos del template
+*.zip
+*.rar
+*.7z
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Depuracion
+core
+core.*
+*.gdb
