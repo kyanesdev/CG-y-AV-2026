@@ -77,16 +77,18 @@ CGyAV/
 
 La estructura se ampliará progresivamente conforme se desarrollen las siguientes guías de ejercicios.
 
+
 ## 📖 Guías de trabajos prácticos
 
 | Guía | Contenido | Estado |
 |---|---|---|
-| **Guía 01** | Introducción a OpenGL y GLSL | ✅ Completada |
-| **Guía 02** | Actividades de la segunda guía | ⏳ Pendiente |
-| **Guía 03** | Actividades de la tercera guía | ⏳ Pendiente |
-| **Guía 04** | Actividades de la cuarta guía | ⏳ Pendiente |
-| **Guía 05** | Actividades de la quinta guía | ⏳ Pendiente |
-| **Guía 06** | Actividades de la sexta guía | ⏳ Pendiente |
+| **Guía 01** | Introducción a OpenGL y GLSL. Primer triángulo y ResourceManager en C++17 | ✅ Completada |
+| **Guía 02** | Mallas indexadas, VAO, VBO, EBO y construcción de un cubo | ✅ Completada |
+| **Guía 03** | Primitivas paramétricas, normales y transformaciones geométricas | ✅ Completada |
+| **Guía 04** | Composición de una aeronave mediante primitivas y transformaciones | ✅ Completada |
+| **Guía 05** | Cámara orbital, matrices de vista y proyección perspectiva | ✅ Completada |
+| **Guía 06** | Game loop, controles de vuelo e integración del Flight Dynamics Model (FDM) | ✅ Completada |
+
 
 
 ## ✈️ Trabajo práctico integrador
