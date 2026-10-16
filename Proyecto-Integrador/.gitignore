@@ -1,0 +1,19 @@
+# Archivos generados al compilar (no versionar)
+/build/
+/bin/
+/libs/dlfdm/build/
+*.o
+*.a
+*.so
+
+# Salidas de pruebas y herramientas
+/libs/dlfdm/salida.csv
+__pycache__/
+*.pyc
+.DS_Store
+*~
+*.swp
+
+# Configuracion local del IDE
+.vscode/
+.idea/
