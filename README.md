@@ -101,6 +101,44 @@ Su alcance, funcionalidades y arquitectura se definirán de acuerdo con las cons
 
 El desarrollo priorizará la comprensión de los conceptos y la capacidad de explicar cada componente implementado.
 
+## 🌌 Módulo adicional — Ray Tracing por software (CPU)
+
+Como actividad complementaria de la materia, se desarrolló una aplicación en **C++17** que genera una imagen de un agujero negro supermasivo inspirado en **TON 618**, utilizando la técnica de **Ray Tracing por software**, ejecutada íntegramente mediante el procesador (CPU).
+
+El objetivo es comprender cómo se construye una imagen mediante el trazado de rayos, relacionando la implementación con los conceptos de **cámara virtual, proyección perspectiva, vectores, superficies visibles y cálculo de colores** abordados durante la asignatura.
+
+### 🔭 ¿Cómo funciona?
+
+El programa genera una imagen de **1920 × 1080 píxeles** mediante los siguientes pasos:
+
+1. 📷 **Cámara virtual:** establece el punto de observación y la dirección de los rayos.
+2. 📐 **Trazado de rayos:** calcula un rayo por cada muestra de la imagen utilizando operaciones vectoriales.
+3. 🕳️ **Agujero negro:** representa el horizonte de eventos como una región oscura que absorbe los rayos.
+4. 💫 **Desviación gravitacional:** aproxima la curvatura de las trayectorias de luz alrededor del agujero negro.
+5. 🔥 **Disco de acreción:** calcula los colores y efectos luminosos del material que rodea al agujero negro.
+6. 🎨 **Imagen final:** determina el color de cada píxel y genera un archivo PNG.
+
+A diferencia de **NVIDIA RTX**, que utiliza aceleración por hardware, este proyecto implementa el trazado de rayos directamente en la **CPU**, sin requerir una tarjeta gráfica dedicada ni OpenGL.
+
+> **Nota académica:** La representación está inspirada en TON 618 y utiliza aproximaciones visuales de los efectos gravitacionales. No constituye una simulación astrofísica exacta.
+
+### 🖼️ Resultado obtenido
+
+![🌌 Agujero negro generado mediante Ray Tracing por CPU](Imagen-Ray-Tracing/renders/AgujeroNegro.png)
+
+### 🚀 Compilación y ejecución
+
+```bash
+cd Imagen-Ray-Tracing/AgujeroNegro
+make
+make render
+xdg-open renders/AgujeroNegro.png
+```
+
+📂 **[Ver código fuente, documentación y explicación técnica del módulo](Imagen-Ray-Tracing/README.md)**
+
+**Conceptos aplicados:** Ray Tracing, vectores, rayos, cámara perspectiva, visibilidad, iluminación, color y generación de imágenes mediante CPU.
+
 ## 🧠 Metodología de aprendizaje
 
 El desarrollo de cada trabajo práctico sigue una secuencia de aprendizaje:
