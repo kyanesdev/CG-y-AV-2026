@@ -1,0 +1,47 @@
+// Practico 10, escena 8: tres capas huecas de vidrio y nucleo rojo.
+#include <memory>
+#include <checker.h>
+#include <dielectric.h>
+#include <escenas.h>
+#include <plane.h>
+#include <sphere.h>
+
+void build_scene_08(Scene& scene, Camera& camera)
+{
+    camera.look_at(glm::vec3(0.0f, 2.0f, 6.0f), glm::vec3(0.0f, 1.5f, 0.0f),
+                   glm::vec3(0.0f, 1.0f, 0.0f), 45.0f);
+    scene.set_background(glm::vec3(0.05f, 0.07f, 0.1f));
+
+    auto floor = std::make_shared<Checker>();
+    floor->size = 0.4f;
+    floor->kd = glm::vec3(0.85f); floor->ka = glm::vec3(0.05f);
+    floor->kd2 = glm::vec3(0.08f, 0.08f, 0.3f);
+    floor->ka2 = glm::vec3(0.005f, 0.005f, 0.018f);
+    scene.add_object(std::make_shared<Plane>(glm::vec3(0.0f), glm::vec3(0.0f, 1.0f, 0.0f), floor));
+
+    auto shell_out = std::make_shared<Dielectric>();
+    shell_out->ior = 1.5f; shell_out->transparency = 0.9f;
+    shell_out->ks = glm::vec3(1.0f); shell_out->shininess = 150.0f;
+    auto shell_in = std::make_shared<Dielectric>(*shell_out);
+    shell_in->ior = 1.0f / 1.5f;
+    shell_in->ks = glm::vec3(0.0f);
+
+    const glm::vec3 center(0.0f, 1.6f, 0.0f);
+    const float outer[] = {1.5f, 1.0f, 0.6f};
+    const float inner[] = {1.44f, 0.96f, 0.576f};
+    for( int i = 0; i < 3; ++i ) {
+        scene.add_object(std::make_shared<Sphere>(center, outer[i], shell_out));
+        scene.add_object(std::make_shared<Sphere>(center, inner[i], shell_in));
+    }
+
+    auto core = std::make_shared<Diffuse>();
+    core->ka = glm::vec3(0.05f, 0.0f, 0.0f);
+    core->kd = glm::vec3(0.85f, 0.08f, 0.05f);
+    core->ks = glm::vec3(0.5f); core->shininess = 40.0f;
+    scene.add_object(std::make_shared<Sphere>(center, 0.3f, core));
+
+    const glm::vec3 att(1.0f, 0.12f, 0.02f);
+    scene.add_light(Light(glm::vec3(-3.0f, 6.0f, 4.0f), glm::vec3(2.8f), att));
+    scene.add_light(Light(glm::vec3(4.0f, 4.0f, 3.0f), glm::vec3(1.0f), att));
+    scene.set_max_depth(8U); // Probar 3U, 6U, 8U, 12U; >8 aumenta mucho el costo.
+}

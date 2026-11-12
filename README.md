@@ -88,6 +88,10 @@ La estructura se ampliará progresivamente conforme se desarrollen las siguiente
 | **Guía 04** | Composición de una aeronave mediante primitivas y transformaciones | ✅ Completada |
 | **Guía 05** | Cámara orbital, matrices de vista y proyección perspectiva | ✅ Completada |
 | **Guía 06** | Game loop, controles de vuelo e integración del Flight Dynamics Model (FDM) | ✅ Completada |
+| **Guía 07** | Generación de terreno procedural, mallas triangulares, normales y eliminación de superficies ocultas | ✅ Completada |
+| **Guía 08** | Texturizado de superficies, coordenadas UV, mipmaps y skybox mediante cubemap | ✅ Completada |
+| **Guía 09** | Iluminación mediante el modelo de Phong, materiales, luz direccional, niebla y corrección gamma | ✅ Completada |
+| **Guía 10** | Trazador de rayos recursivos por CPU: construcción de escenas, iluminación, sombras, reflexión, transparencia y refracción | ✅ Completada |
 
 
 
